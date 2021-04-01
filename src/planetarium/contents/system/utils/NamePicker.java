@@ -15,7 +15,7 @@ import planetarium.contents.celestials.enums.CelestialType;
 
 /**
  *
- * @author gabri
+ * @author TTT
  */
 public class NamePicker {
 

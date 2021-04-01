@@ -7,7 +7,7 @@ package planetarium.console.output.helper;
 
 /**
  *
- * @author gabri
+ * @author TTT
  * @param <K>
  * @param <V>
  */

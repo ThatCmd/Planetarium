@@ -11,7 +11,7 @@ import planetarium.contents.celestials.interfaces.ICelestial;
 
 /**
  *
- * @author gabri
+ * @author TTT
  */
 public class TreeSystem {
 

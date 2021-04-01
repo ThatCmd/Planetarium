@@ -7,7 +7,7 @@ package planetarium.console;
 
 /**
  *
- * @author gabri
+ * @author TTT
  */
 public class GeneralFormatter {
 

@@ -19,7 +19,7 @@ import planetarium.contents.celestials.customized.MorteNera;
 
 /**
  *
- * @author gabri
+ * @author TTT
  */
 public class AudioPlayer {
 

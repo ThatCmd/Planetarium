@@ -12,7 +12,7 @@ import java.util.Stack;
 
 /**
  *
- * @author gabri
+ * @author TTT
  */
 public class OutputPicker {
 

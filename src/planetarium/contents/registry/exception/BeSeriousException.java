@@ -7,7 +7,7 @@ package planetarium.contents.registry.exception;
 
 /**
  *
- * @author gabri
+ * @author TTT
  */
 public class BeSeriousException extends RuntimeException{
 

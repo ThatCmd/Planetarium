@@ -10,7 +10,7 @@ import planetarium.console.output.Menu;
 
 /**
  *
- * @author gabri
+ * @author TTT
  */
 public class PlanetariumThread {
 

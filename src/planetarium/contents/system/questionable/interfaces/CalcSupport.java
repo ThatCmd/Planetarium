@@ -10,7 +10,7 @@ import planetarium.contents.system.questionable.Calculator;
 
 /**
  *
- * @author gabri
+ * @author TTT
  */
 public interface CalcSupport {
 
