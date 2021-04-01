@@ -1,0 +1,81 @@
+Sezione aiuto / spiegamento
+
+-Valori:
+    Tutti i valori numerici inseribili nel programma sono decimali, per 
+    immettere dei valori decimali su usa il punto, ad esempio:
+            12,345 deve essere scritto come 12.345
+    Nel caso si usi la virgola il programma farà reinserire il valore.
+    Si possono immettere anche valori negativi se preceduti dal segno 
+    "-" (meno).
+    Nel caso della richiesta di inserimento di valori testuali in alcune
+    situazioni è possibile premere invio senza inserire nulla ed il programma
+    si occupa di dare un nome adatto per l'elemento.
+    Le domande che richiedono una risposta del tipo: sì/no mostreranno alla
+    fine della richiesta questa stringa: [s/n]
+    Se si scrive "s" la risposta è sì, altrimenti se si risponde "n" la risposta
+    è no.
+
+-Menù:
+    I menù sono costituiti da elenchi numerati ed ogni scelta possibile 
+    è racchiusa tra le parentesi quadre. Ad esempio:
+
+    [1] Opzione 1
+    [2] Opzione 2
+
+    In questo caso ci sono 2 voci disponibili nel menù, rispettivamente 
+    la voce 1 e 2. 
+    A quest punto si può digitare il numero corrispondente all'operazione 
+    che si vuole fare e premere il tasto invio. Alcuni menù non permettono
+    scelte al di fuori dell'elenco, perciò verrà riproposta la voce che 
+    chiede l'inserimento del numero.
+    Alcuni menù permettono di uscire digitando semplicemente un carattere 
+    o una sequenza di caratteri (generalmente il simbolo *).
+
+-Sistema:
+    Il sistema è l'insieme dei corpi registrati e della griglia delle 
+    coordinate. Le coordinate assolute di un sistema sono quelle 
+    preimpostate: (X:0,Y:0). Perciò tutte le posizioni registrate useranno 
+    questa impostazione.
+    Il sistema contiene una sola stella, e può contenere migliaia di pianeti
+    su cui a loro volta orbitano fino a diverse migliaia di lune.
+
+-Stella:
+    Esiste una sola stella. L'unica possibilità di creare una stella avviene
+    solo alla creazione del sistema stesso.
+    Ha un nome, una massa, una posizione (di default (X:0,Y:0)), elementi 
+    che orbitano intorno e inoltre ha sempre ID = 0, poichè è il primo 
+    elemento che viene registrato.
+
+-Pianeta:
+    I pianeti possono orbitare solamente intorno alla stella del sistema e a
+    loro volta possono avere delle lune che orbitano intorno a lui.
+    Hanno un nome, una massa, una posizione, elementi che orbitano
+    intorno a loro e un ID univoco.
+
+-Luna:
+    Le lune possono orbitare solamente intorno ai pianeti che sono già stati
+    registrati. Non possono avere altri corpi celesti che orbitano intorno
+    a loro.
+    Hanno un nome, una massa, una posizione e un ID univoco.
+
+-Posizione:
+    Le posizioni sono definite da una componente X e una Y. 
+    La rappresentazione è (X,Y). Una posizione può essere inserita in modo 
+    assoluto, cioè riferita al centro della griglia del sistema (0,0). 
+    Altrimenti se viene inserita in modo relativo (possibile solo per i 
+    pianeti e le lune) le coordinate vengono considerate rispetto al corpo
+    intorno a cui orbitano e successivamene convertite in assolute.
+
+-Ragistro:
+    Il registro permette di assegnare ID univoci agli elementi e controllare
+    che un corpo celeste abbia un nome unico. Inoltre un corpo può non essere
+    registrato nel caso non rispetti certi requisiti: ad esempio non verrà
+    registrata una luna per orbitare intorno alla stella (le lune possono 
+    orbitare solo intorno ad un pianeta).
+    Un corpo celeste che viene distrutto viene allo stesso tempo tolto dal
+    registro e dall'orbita su cui era posizionato. Un pianeta che viene 
+    distrutto causa la reazione a catena per cui tutti gli elementi in orbita
+    intorno a lui vengano distrutti (e perciò tolti dal registro).
+    Il registro è interrogabile: si può cercare per ID o per nome di un elemento
+    qualsiasi e viene restituito il risultato.
+    
