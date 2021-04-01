@@ -173,11 +173,11 @@ public class GestioneSistema {
         return coordinate_sys;
     }
 
-    public boolean maximumReached(ICelestial i) {
-        if (i == null) {
+    public boolean maximumReached(ICelestial ic) {
+        if (ic == null) {
             return Star.getIstance().getOnOrbit().size() >= 26000;
         }
-        switch (i.getType()) {
+        switch (ic.getType()) {
             default:
             case ASTEROIDE:
             case LUNA:
@@ -186,9 +186,9 @@ public class GestioneSistema {
             case MORTE_NERA:
                 return true;
             case STELLA:
-                return i.getOnOrbit().size() >= 26000;
+                return ic.getOnOrbit().size() >= 26000;
             case PIANETA:
-                return i.getOnOrbit().size() >= 5000;
+                return ic.getOnOrbit().size() >= 5000;
         }
     }
 }

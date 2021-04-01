@@ -132,7 +132,7 @@ public class InputObject {
      *
      * @return
      */
-    public static GestioneSistema readSistem() {
+    public static GestioneSistema readSystem() {
         printOut("Creazione guidata di un nuovo sistema: ", true, false);
         GeneralFormatter.incrementIndents();
         printOut("-Scelta del nome del sistema: ", true, false);

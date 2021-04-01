@@ -59,7 +59,7 @@ public class MorteNera extends Moon {
         GeneralFormatter.printOut("Abbandonare la stazione!", true, true);
         ap.playAudioJoined("/planetarium/resources/audio/dtds.wav");
         destroyed = true;
-        Registry.removeElement(this);
+        Registry.removeEntry(this);
     }
 
     public void toDeath(ICelestial toDestroy) {

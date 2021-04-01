@@ -76,7 +76,7 @@ public class Star extends RegistrableEntry implements ICelestial {
         calculated_mass = mass;
         w_pos = Position.multiply(position, mass);
         setSubclassObject(this);
-        Registry.registerCelestial(this, name);
+        Registry.registerEntry(this, name);
         RegistryEvent.getIstance().addListener(my_listener);
     }
 
@@ -139,7 +139,7 @@ public class Star extends RegistrableEntry implements ICelestial {
             if (!celestials.contains(as_celestial) && as_celestial.getType() == CelestialType.PIANETA && ic instanceof RegistrableEntry) {
                 RegistrableEntry as_registrable = (RegistrableEntry) ic;
                 as_celestial.setParent(this);
-                if (Registry.registerCelestial(as_registrable, as_celestial.getName())) {
+                if (Registry.registerEntry(as_registrable, as_celestial.getName())) {
                     celestials.add(as_celestial);
                     to_recalculate_mass = true;
                 }
@@ -151,7 +151,7 @@ public class Star extends RegistrableEntry implements ICelestial {
     public void destroy() {
         RegistryEvent.getIstance().removeListener(my_listener);
         celestials.forEach(ICelestial::destroy);
-        Registry.removeElement(this);
+        Registry.removeEntry(this);
     }
 
     @Override

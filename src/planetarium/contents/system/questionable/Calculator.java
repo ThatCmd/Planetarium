@@ -24,6 +24,10 @@ public class Calculator {
      */
     public static final double THRESHOLD = 0.000001;
 
+    private Calculator(){
+        
+    }
+    
     /**
      * Calcola le masse pesate.
      *

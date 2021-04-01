@@ -48,7 +48,7 @@ public final class Registry {
      * @return <code>true</code> se la registrazione avviene con successo,
      * altrimenti <code>false</code>.
      */
-    public static boolean registerCelestial(RegistrableEntry re, String entry_name) {
+    public static boolean registerEntry(RegistrableEntry re, String entry_name) {
         try {
             if (re != null && !re.isRegistered()
                     && entry_name != null && !"".equals(entry_name.trim()) && !secondary_registry.containsKey(entry_name)) {
@@ -74,11 +74,11 @@ public final class Registry {
      * @return <code>true</code> se viene rimosso con successo, altrimenti
      * <code>false</code>.
      */
-    public static boolean removeElement(RegistrableEntry re) {
+    public static boolean removeEntry(RegistrableEntry re) {
         if (re != null && registry.containsValue(re)) {
             registry.remove(re.getID());
             secondary_registry.remove(re.getEntryName());
-            re.removed(register_key);
+            re.remove(register_key);
             RegistryEvent.getIstance().elementRemoved(re, register_key);
             return true;
         }

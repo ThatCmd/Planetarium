@@ -33,7 +33,7 @@ public class Grid {
         init();
     }
 
-    public Grid(float x, float y) {
+    public Grid(double x, double y) {
         this(new Position(x, y));
     }
 
@@ -71,7 +71,7 @@ public class Grid {
      * @param y La posizione y relativamente al corpo intorno a cui orbita.
      * @return La posizione assoluta nel sistema.
      */
-    public Position getAbsolutePositionRelativeTo(ICelestial relative, float x, float y) {
+    public Position getAbsolutePositionRelativeTo(ICelestial relative, double x, double y) {
         return new Position(absolute_zero.getX() + x + relative.getPosition().getX(), absolute_zero.getY() + y + relative.getPosition().getY());
     }
 

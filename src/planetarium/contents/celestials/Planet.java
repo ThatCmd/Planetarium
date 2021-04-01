@@ -114,7 +114,7 @@ public class Planet extends RegistrableEntry implements ICelestial {
             ICelestial as_celestial = (ICelestial) ic;
             if (!celestials.contains(as_celestial) && (as_celestial.getType() == CelestialType.LUNA || as_celestial.getType() == CelestialType.MORTE_NERA) && ic instanceof RegistrableEntry) {
                 RegistrableEntry as_registrable = (RegistrableEntry) ic;
-                if (Registry.registerCelestial(as_registrable, as_celestial.getName())) {
+                if (Registry.registerEntry(as_registrable, as_celestial.getName())) {
                     as_celestial.setParent(this);
                     celestials.add(as_celestial);
                     to_recalculate_mass = true;
@@ -150,7 +150,7 @@ public class Planet extends RegistrableEntry implements ICelestial {
     public void destroy() {
         RegistryEvent.getIstance().removeListener(my_listener);
         celestials.forEach(ICelestial::destroy);
-        Registry.removeElement(this);
+        Registry.removeEntry(this);
     }
 
     @Override

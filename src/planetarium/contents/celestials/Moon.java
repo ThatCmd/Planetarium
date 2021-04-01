@@ -111,7 +111,7 @@ public class Moon extends RegistrableEntry implements ICelestial {
 
     @Override
     public void destroy() {
-        Registry.removeElement(this);
+        Registry.removeEntry(this);
     }
 
     @Override

@@ -7,7 +7,6 @@ package planetarium.console;
 
 import static planetarium.console.GeneralFormatter.printOut;
 import planetarium.console.output.Menu;
-import planetarium.contents.system.GestioneSistema;
 
 /**
  *
@@ -15,7 +14,6 @@ import planetarium.contents.system.GestioneSistema;
  */
 public class PlanetariumThread {
 
-    GestioneSistema gs;
     Menu m;
 
     public PlanetariumThread() {
@@ -27,8 +25,8 @@ public class PlanetariumThread {
         consoleSpaces(2);
         printMenu();
     }
-    
-    private void printMenu(){
+
+    private void printMenu() {
         printOut("Scegli un'operazione:", true, false);
         GeneralFormatter.incrementIndents();
         m = new Menu();

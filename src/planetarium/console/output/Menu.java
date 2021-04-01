@@ -28,10 +28,10 @@ public class Menu {
 
     private static final ResourceBundle menu_bundle = ResourceBundle.getBundle("planetarium/resources/i18n/menu_bundle");
 
-    ArrayList<BasicPair<String, FutureMenuAction>> menu = new ArrayList<>();
-    ArrayList<FutureMenuAction> to_execute_later = new ArrayList<>();
+    private final ArrayList<BasicPair<String, FutureMenuAction>> menu = new ArrayList<>();
+    private final ArrayList<FutureMenuAction> to_execute_later = new ArrayList<>();
 
-    GestioneSistema gs;
+    private GestioneSistema gs;
     private boolean death_star_unlocked = false;
     private int death_star_pos = -1;
 
@@ -47,7 +47,7 @@ public class Menu {
             Help.getIstance().printHelp();
         });
         addOption(menu_bundle.getString("sys_gen"), () -> {
-            gs = InputObject.readSistem();
+            gs = InputObject.readSystem();
             if (gs != null) {
                 to_execute_later.add(() -> {
                     menu.remove(2);

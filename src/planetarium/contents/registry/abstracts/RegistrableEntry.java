@@ -46,14 +46,14 @@ public abstract class RegistrableEntry {
 
     /**
      * Registra il corpo celestiale. Solo la classe {@link Registry} tramite il
-     * metodo {@link Registry#registerCelestial(planetarium.contents.registry.abstracts.RegistrableEntry, java.lang.String)
+     * metodo {@link Registry#registerEntry(planetarium.contents.registry.abstracts.RegistrableEntry, java.lang.String)
      * } può registrare l'ID.
      *
      * @param id Il nuovo ID
-     * @param register L'unica instanza di register.
+     * @param registry L'unica instanza di register.
      */
-    public final void register(long id, Registry register) {
-        if (register != null && register.onCall()) {
+    public final void register(long id, Registry registry) {
+        if (registry != null && registry.onCall()) {
             if (id >= 0) {
                 registered = true;
                 ID = id;
@@ -70,7 +70,7 @@ public abstract class RegistrableEntry {
      *
      * @param register Il registro.
      */
-    public final void removed(Registry register) {
+    public final void remove(Registry register) {
         if (register != null && register.onCall()) {
             if (registered) {
                 registered = false;
@@ -107,10 +107,10 @@ public abstract class RegistrableEntry {
      * Imposta (solo una volta) il nome dell'entrata.
      *
      * @param name Il nome.
-     * @param register L'unica instanza di register.
+     * @param registry L'unica instanza di register.
      */
-    public final void setEntryName(String name, Registry register) {
-        if (register != null && register.onCall() && entry_name == null) {
+    public final void setEntryName(String name, Registry registry) {
+        if (registry != null && registry.onCall() && entry_name == null) {
             entry_name = name;
         }
     }
