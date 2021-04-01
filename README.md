@@ -2,7 +2,7 @@
  
 Esercizio 1 del progetto Arnaldo.
 
-	Tutti i diritti del progetto sono del team: The Tesler Team, d'ora in poi semplicemente TTT.
+	Tutti i diritti del progetto sono del team: The Tesler Team, semplicemente TTT.
 
 Il progetto è pubblico, la copia del codice è concessa se e solo se vengono dati i crediti al team TTT.<br>
 Viene inoltre reso disponibile il file UML "Diagramma UML.pdf" che contiene sia come viene gestito l'output e l'input della console (pagina 1) sia come le classi del programma interagiscono tra loro (pagina 2). La parte che risolve il quesito è pensata come una libreria, perciò le classi della gestione input e output sono separate.<br>
