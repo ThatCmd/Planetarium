@@ -5,9 +5,8 @@
  */
 package planetarium.console.output;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import planetarium.console.GeneralFormatter;
 
 /**
@@ -28,9 +27,8 @@ public class Help {
     }
 
     public void printHelp() {
-        String create = getClass().getClassLoader().getResource("planetarium/resources/phrases/help").getFile();
-        try (FileInputStream fr_h = new FileInputStream(new File(create))) {
-            System.out.println(new String(fr_h.readAllBytes()));
+        try (InputStream create = getClass().getResourceAsStream("/planetarium/resources/phrases/help")) {
+            System.out.println(new String(create.readAllBytes()));
         } catch (IOException ioe) {
             GeneralFormatter.printOut("E niente: non c'è nessuna pagina di help: " + ioe.getMessage(), true, true);
         }
