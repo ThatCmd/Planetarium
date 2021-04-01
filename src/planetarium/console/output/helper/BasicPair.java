@@ -13,8 +13,8 @@ package planetarium.console.output.helper;
  */
 public class BasicPair<K, V> {
 
-    private K key;
-    private V value;
+    private final K key;
+    private final V value;
 
     public BasicPair(K k, V v) {
         key = k;

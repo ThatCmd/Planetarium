@@ -38,16 +38,12 @@ public class Planetarium {
         gs.addElementTo(null, A, false);
         gs.addElementTo(null, B, false);
 
-        //gs.addElementTo(C, B, false);
         gs.addElementTo(null, C, false);
         gs.addElementTo(C, M, false);
         gs.addElementTo(A, N, false);
 
-        //System.out.println("Per arraivare a " + M + " seguire il percorso:\t" + Queryable.getPathToCelestial(M));
-        System.out.println("Per arraivare a " + A + " da " + M + " seguire il percorso:\t" + Queryable.getStrictPath(M, A));
-
+        System.out.println("Per arrivare a " + A + " da " + M + " seguire il percorso:\t" + Queryable.getStrictPath(M, A));
         Registry.printRegistry();
-
     }
 
     public static void testMaximumExpectedLoad() {
@@ -60,10 +56,8 @@ public class Planetarium {
                 gs.addElementTo(tmp, new Moon(null, j % 2 + 1, new Position(i + j, i + j)), true);
             }
         }
-        //Per aggiungere tutti i pianeti e lune possibile ci vogliono circa : 37180 ms (37 secondi) [i7 8th gen, 500MB ram assegnata(presumo)]
         System.out.println("Add time: " + (new Date().getTime() - t1));
 
-        //Per calcolare tutti i pesi (26000 pianeti con 5000 lune cisacuno) ci vogliono 30 ms (0.015 s)
         t1 = new Date().getTime();
         System.out.println(Calculator.recalcNeededValues(Star.getIstance()));
         System.out.println(Star.getIstance().getWeightedPosition());
@@ -87,7 +81,7 @@ public class Planetarium {
 
         System.out.println("Il registro del sistema:\n");
         Registry.printRegistry();
-        System.out.println(Calculator.canCollide(luna2,luna3));
+        System.out.println(Calculator.canCollide(luna2, luna3));
     }
 
     /**
