@@ -26,9 +26,8 @@ public class OutputPicker {
     }
 
     private void init() {
-        try {
-            InputStream create = getClass().getResourceAsStream("/planetarium/resources/phrases/on_create");
-            InputStream delete = getClass().getResourceAsStream("/planetarium/resources/phrases/on_delete");
+        try (InputStream create = getClass().getResourceAsStream("/planetarium/resources/phrases/on_create");
+                InputStream delete = getClass().getResourceAsStream("/planetarium/resources/phrases/on_delete")) {
             created.addAll(Arrays.asList(new String(create.readAllBytes()).split("\n")));
             deleted.addAll(Arrays.asList(new String(delete.readAllBytes()).split("\n")));
         } catch (IOException ex) {

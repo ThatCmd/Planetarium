@@ -30,10 +30,9 @@ public class NamePicker {
     }
 
     private void init() {
-        try {
-            InputStream stars = getClass().getResourceAsStream("/planetarium/resources/names/stelle");
-            InputStream planets = getClass().getResourceAsStream("/planetarium/resources/names/pianeti");
-            InputStream moons = getClass().getResourceAsStream("/planetarium/resources/names/lune");
+        try (InputStream stars = getClass().getResourceAsStream("/planetarium/resources/names/stelle");
+                InputStream planets = getClass().getResourceAsStream("/planetarium/resources/names/pianeti");
+                InputStream moons = getClass().getResourceAsStream("/planetarium/resources/names/lune")) {
             stelle.addAll(Arrays.asList(new String(stars.readAllBytes()).split("\n")));
             pianeti.addAll(Arrays.asList(new String(planets.readAllBytes()).split("\n")));
             lune.addAll(Arrays.asList(new String(moons.readAllBytes()).split("\n")));
