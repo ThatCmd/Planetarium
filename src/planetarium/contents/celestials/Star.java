@@ -152,6 +152,7 @@ public class Star extends RegistrableEntry implements ICelestial {
         RegistryEvent.getIstance().removeListener(my_listener);
         celestials.forEach(ICelestial::destroy);
         Registry.removeEntry(this);
+        istance = null;
     }
 
     @Override

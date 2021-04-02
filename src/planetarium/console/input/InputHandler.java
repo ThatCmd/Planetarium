@@ -52,7 +52,7 @@ public class InputHandler {
      * annullata, altrimenti {@code false}.
      * @param skippable_keyword La parola o lettera (o qualsiasi altra cosa) per
      * uscire dal giro (se e solo se {@code skippable = true}).
-     * @return Può resistire il valore immesso oppure {@code null} nel caso
+     * @return Può restituire il valore immesso oppure {@code null} nel caso
      * l'utente sia uscito dal l'immisione.
      */
     public Optional<Double> readDouble(String question, boolean skippable, String skippable_keyword) {
@@ -73,7 +73,7 @@ public class InputHandler {
             } catch (NoSuchElementException | NumberFormatException ex) {
                 input.nextLine();
                 printOut("Input non valido. Inserire di nuovo"
-                        + (skippable ? "(Scrivere \"" + skippable_keyword + "\" per annullare)" : "")
+                        + (skippable ? "(scrivere \"" + skippable_keyword + "\" per annullare)" : "")
                         + " :", false, true);
             }
         }
@@ -100,7 +100,7 @@ public class InputHandler {
      * annullata, altrimenti {@code false}.
      * @param skippable_keyword La parola o lettera (o qualsiasi altra cosa) per
      * uscire dal giro (se e solo se {@code skippable = true}).
-     * @return Può resistire il valore immesso oppure {@code null} nel caso
+     * @return Può restituire il valore immesso oppure {@code null} nel caso
      * l'utente sia uscito dal l'immisione.
      */
     public Optional<Integer> readInteger(String question, boolean skippable, String skippable_keyword) {
@@ -121,7 +121,7 @@ public class InputHandler {
             } catch (NoSuchElementException | NumberFormatException ex) {
                 input.nextLine();
                 printOut("Input non valido. Inserire di nuovo"
-                        + (skippable ? "(Scrivere \"" + skippable_keyword + "\" per annullare)" : "")
+                        + (skippable ? "(scrivere \"" + skippable_keyword + "\" per annullare)" : "")
                         + " :", false, true);
             }
         }
@@ -148,7 +148,7 @@ public class InputHandler {
      * annullata, altrimenti {@code false}.
      * @param skippable_keyword La parola o lettera (o qualsiasi altra cosa) per
      * uscire dal giro (se e solo se {@code skippable = true}).
-     * @return Può resistire il valore immesso oppure {@code null} nel caso
+     * @return Può restituire il valore immesso oppure {@code null} nel caso
      * l'utente sia uscito dal l'immisione.
      */
     public Optional<Long> readLong(String question, boolean skippable, String skippable_keyword) {
@@ -169,7 +169,7 @@ public class InputHandler {
             } catch (NoSuchElementException | NumberFormatException ex) {
                 input.nextLine();
                 printOut("Input non valido. Inserire di nuovo"
-                        + (skippable ? "(Scrivere \"" + skippable_keyword + "\" per annullare)" : "")
+                        + (skippable ? "(scrivere \"" + skippable_keyword + "\" per annullare)" : "")
                         + " :", false, true);
             }
         }
@@ -196,7 +196,7 @@ public class InputHandler {
      * annullata, altrimenti {@code false}.
      * @param skippable_keyword La parola o lettera (o qualsiasi altra cosa) per
      * uscire dal giro (se e solo se {@code skippable = true}).
-     * @return Può resistire il valore immesso oppure {@code null} nel caso
+     * @return Può restituire il valore immesso oppure {@code null} nel caso
      * l'utente sia uscito dal l'immisione.
      */
     public Optional<String> readString(String question, boolean skippable, String skippable_keyword) {
@@ -217,7 +217,7 @@ public class InputHandler {
             } catch (NoSuchElementException | NumberFormatException ex) {
                 input.nextLine();
                 printOut("Input non valido. Inserire di nuovo"
-                        + (skippable ? "(Scrivere \"" + skippable_keyword + "\" per annullare)" : "")
+                        + (skippable ? "(scrivere \"" + skippable_keyword + "\" per annullare)" : "")
                         + " :", false, true);
             }
         }

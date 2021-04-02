@@ -39,6 +39,14 @@ public class Menu {
         init();
     }
 
+    private void reset() {
+        menu.clear();
+        gs = null;
+        death_star_pos = -1;
+        death_star_unlocked = false;
+        init();
+    }
+
     private void init() {
         addOption(menu_bundle.getString("exit"), () -> {
             System.exit(0);
@@ -80,10 +88,21 @@ public class Menu {
         });
         addOption(menu_bundle.getString("rem_celestial"), () -> {
             ICelestial destroyedCelestial = InputObject.destroyCelestial(gs);
-            if (destroyedCelestial != null && destroyedCelestial.getType() == CelestialType.MORTE_NERA) {
-                to_execute_later.add(() -> {
-                    menu.remove(death_star_pos);
-                });
+            if (destroyedCelestial != null) {
+                switch (destroyedCelestial.getType()) {
+                    case MORTE_NERA:
+                        to_execute_later.add(() -> {
+                            menu.remove(death_star_pos);
+                        });
+                        break;
+                    case STELLA:
+                        to_execute_later.add(() -> {
+                            reset();
+                        });
+                        break;
+                    default:
+                        break;
+                }
             }
         });
         addOption(menu_bundle.getString("show_moons"), () -> {
@@ -106,14 +125,14 @@ public class Menu {
             ICelestial c = InputQuery.celestialLookup(menu_bundle.getString("find_cel_desc"));
             if (c != null) {
                 System.out.println();
-                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("found"), new Object[] {c.getName()}), true, false);
+                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("found"), new Object[]{c.getName()}), true, false);
                 GeneralFormatter.incrementIndents();
-                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("mass_cel"), new Object[] {c.getMass()}), true, false);
-                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("type_cel"), new Object[] {c.getType()}), true, false);
-                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("pos_abs_cel"), new Object[] {c.getPosition()}), true, false);
+                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("mass_cel"), new Object[]{c.getMass()}), true, false);
+                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("type_cel"), new Object[]{c.getType()}), true, false);
+                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("pos_abs_cel"), new Object[]{c.getPosition()}), true, false);
                 if (c.getType() != CelestialType.STELLA) {
-                    GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("app_orb_cel"), new Object[] {c.getParent()}), true, false);
-                    GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("pos_rel_cel"), new Object[] {gs.getGrid().getPositionRelativeToParent(c)}), true, false);
+                    GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("app_orb_cel"), new Object[]{c.getParent()}), true, false);
+                    GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("pos_rel_cel"), new Object[]{gs.getGrid().getPositionRelativeToParent(c)}), true, false);
                 }
                 GeneralFormatter.decrementIndents();
             }
