@@ -125,14 +125,14 @@ public class Menu {
             ICelestial c = InputQuery.celestialLookup(menu_bundle.getString("find_cel_desc"));
             if (c != null) {
                 System.out.println();
-                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("found"), new Object[]{c.getName()}), true, false);
+                GeneralFormatter.printOut(menu_bundle.getString("found") + c.getName(), true, false);
                 GeneralFormatter.incrementIndents();
-                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("mass_cel"), new Object[]{c.getMass()}), true, false);
-                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("type_cel"), new Object[]{c.getType()}), true, false);
-                GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("pos_abs_cel"), new Object[]{c.getPosition()}), true, false);
+                GeneralFormatter.printOut(menu_bundle.getString("mass_cel") + c.getMass(), true, false);
+                GeneralFormatter.printOut(menu_bundle.getString("type_cel") + c.getType(), true, false);
+                GeneralFormatter.printOut(menu_bundle.getString("pos_abs_cel") + c.getPosition(), true, false);
                 if (c.getType() != CelestialType.STELLA) {
-                    GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("app_orb_cel"), new Object[]{c.getParent()}), true, false);
-                    GeneralFormatter.printOut(java.text.MessageFormat.format(menu_bundle.getString("pos_rel_cel"), new Object[]{gs.getGrid().getPositionRelativeToParent(c)}), true, false);
+                    GeneralFormatter.printOut(menu_bundle.getString("app_orb_cel") + c.getParent(), true, false);
+                    GeneralFormatter.printOut(menu_bundle.getString("pos_rel_cel") + gs.getGrid().getPositionRelativeToParent(c), true, false);
                 }
                 GeneralFormatter.decrementIndents();
             }
