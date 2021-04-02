@@ -6,6 +6,7 @@
 package planetarium;
 
 import java.util.Date;
+import java.util.Scanner;
 import planetarium.console.PlanetariumThread;
 import planetarium.contents.celestials.Moon;
 import planetarium.contents.celestials.Planet;
@@ -83,6 +84,8 @@ public class Planetarium {
         Registry.printRegistry();
         System.out.println(Calculator.canCollide(luna2, luna3));
     }
+
+    static final Scanner input = new Scanner(System.in);
 
     /**
      * @param args the command line arguments
