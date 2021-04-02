@@ -66,7 +66,7 @@ public class Planetarium {
     }
 
     public static void testArnald() {
-        Star s = Star.genIstance("Stella", 30, new Position(0, 0));
+        Star.genIstance("Stella", 30, new Position(0, 0));
         GestioneSistema gs = new GestioneSistema("Sistema di prova");
         Planet pianeta1 = new Planet("Pianeta1", 5, new Position(0, -3));
         Planet pianeta2 = new Planet("Pianeta2", 7, new Position(3, 3));
