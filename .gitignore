@@ -23,6 +23,6 @@
 hs_err_pid*
 
 #Files di Netbeans
-build/
-dist/
-nbproject/
+/build
+/dist
+/nbproject
