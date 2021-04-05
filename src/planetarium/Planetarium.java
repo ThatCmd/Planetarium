@@ -25,7 +25,7 @@ public class Planetarium {
 
     public static void testGeneric() {
         GestioneSistema gs = new GestioneSistema(null);
-
+        //ciao
         System.out.println("Creato il sistema:\t" + gs.getName());
         System.out.println("Stella del sistema:\t" + gs.getStar());
 
