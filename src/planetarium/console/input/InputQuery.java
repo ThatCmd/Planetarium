@@ -6,7 +6,6 @@
 package planetarium.console.input;
 
 import java.util.Optional;
-import javafx.beans.property.SimpleIntegerProperty;
 import planetarium.console.GeneralFormatter;
 import static planetarium.console.GeneralFormatter.printOut;
 import planetarium.contents.celestials.enums.CelestialType;
@@ -16,12 +15,29 @@ import planetarium.contents.system.cartesian.Position;
 import planetarium.contents.system.questionable.Calculator;
 import planetarium.contents.system.questionable.Queryable;
 
- /**
+/**
  * Gestisce la lettura in input di query e l'esecuzione.
  *
  * @author TTT
  */
 public class InputQuery {
+
+    private static class IntegerProperty {
+
+        int val;
+
+        public IntegerProperty(int value) {
+            val = value;
+        }
+
+        public void setValue(int value) {
+            val = value;
+        }
+
+        public int getValue() {
+            return val;
+        }
+    }
 
     private InputQuery() {
     }
@@ -159,15 +175,15 @@ public class InputQuery {
                 ICelestial planet = celestialLookup("Pianeta:", CelestialType.PIANETA);
                 GeneralFormatter.decrementIndents();
                 if (planet != null) {
-                    SimpleIntegerProperty i = new SimpleIntegerProperty(1);
+                    IntegerProperty i = new IntegerProperty(1);
                     printOut("Lune appartenenti a questo pianeta:", true, false);
                     Queryable.getMoons(planet).stream().forEach(moon -> {
-                        printOut(moon.getName(), i.intValue() % 3 == 0, false);
-                        if (i.intValue() % 3 != 0) {
-                            i.set(i.intValue() + 1);
+                        printOut(moon.getName(), i.getValue() % 3 == 0, false);
+                        if (i.getValue() % 3 != 0) {
+                            i.setValue(i.getValue() + 1);
                             System.out.print(" , ");
                         } else {
-                            i.set(0);
+                            i.setValue(0);
                         }
                     });
                 }
