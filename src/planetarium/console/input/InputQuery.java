@@ -16,7 +16,7 @@ import planetarium.contents.system.cartesian.Position;
 import planetarium.contents.system.questionable.Calculator;
 import planetarium.contents.system.questionable.Queryable;
 
-/**
+ /**
  * Gestisce la lettura in input di query e l'esecuzione.
  *
  * @author TTT
