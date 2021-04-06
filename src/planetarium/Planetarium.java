@@ -28,9 +28,8 @@ public class Planetarium {
         //ciao
         System.out.println("Creato il sistema:\t" + gs.getName());
         System.out.println("Stella del sistema:\t" + gs.getStar());
-        
+
         //ghwtrpuipguw
-        	
         Planet A = new Planet(null, 100, new Position(1, 2));
         Planet B = new Planet(null, 120, new Position(1, 4));
         Planet C = new Planet(null, 120, new Position(3, 6));
@@ -94,6 +93,7 @@ public class Planetarium {
      */
     public static void main(String[] args) {
         PlanetariumThread pt = new PlanetariumThread();
+        pt.start();
         //testArnald();
     }
 }

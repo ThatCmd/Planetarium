@@ -30,6 +30,13 @@ public class PlanetariumThread {
         printOut("Scegli un'operazione:", true, false);
         GeneralFormatter.incrementIndents();
         m = new Menu();
+    }
+
+    public Menu getMenu() {
+        return m;
+    }
+    
+    public void start(){
         m.paintMenu();
     }
 

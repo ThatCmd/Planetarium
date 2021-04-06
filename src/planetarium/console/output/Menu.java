@@ -65,6 +65,18 @@ public class Menu {
         });
     }
 
+    public void setGestioneSistema(GestioneSistema gs) {
+        if (gs != null && this.gs != null) {
+            this.gs = gs;
+            to_execute_later.add(() -> {
+                menu.remove(2);
+                addAllBasicOptions();
+            });
+            to_execute_later.forEach((f) -> f.onSelected());
+            to_execute_later.clear();
+        }
+    }
+
     /**
      * Aggiunge tutte le opzioni iniziali al menù,le altre vengono sbolccate e/o
      * bloccate seguendo dei criteri. Ad esempio:

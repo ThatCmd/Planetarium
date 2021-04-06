@@ -156,4 +156,12 @@ public class Grid {
         return new_pos;
     }
 
+    public double getMaximumX() {
+        return maximum_x;
+    }
+
+    public double getMaximumY() {
+        return maximum_y;
+    }
+
 }
