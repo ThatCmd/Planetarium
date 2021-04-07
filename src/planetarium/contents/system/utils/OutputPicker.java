@@ -8,6 +8,7 @@ package planetarium.contents.system.utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Stack;
 
 /**
@@ -30,6 +31,8 @@ public class OutputPicker {
                 InputStream delete = getClass().getResourceAsStream("/planetarium/resources/phrases/on_delete")) {
             created.addAll(Arrays.asList(new String(create.readAllBytes()).split("\n")));
             deleted.addAll(Arrays.asList(new String(delete.readAllBytes()).split("\n")));
+            Collections.reverse(created);
+            Collections.reverse(deleted);
         } catch (IOException ex) {
 
         }
