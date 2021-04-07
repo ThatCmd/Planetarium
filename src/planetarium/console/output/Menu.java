@@ -67,7 +67,7 @@ public class Menu {
     }
 
     public void setGestioneSistema(GestioneSistema gs) {
-        if (gs != null && this.gs != null) {
+        if (gs != null) {
             this.gs = gs;
             to_execute_later.add(() -> {
                 menu.remove(2);
