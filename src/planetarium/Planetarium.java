@@ -28,7 +28,7 @@ public class Planetarium {
         //ciao
         System.out.println("Creato il sistema:\t" + gs.getName());
         System.out.println("Stella del sistema:\t" + gs.getStar());
-        //abc
+        //abcdef
         //ghwtrpuipguw
         Planet A = new Planet(null, 100, new Position(1, 2));
         Planet B = new Planet(null, 120, new Position(1, 4));
