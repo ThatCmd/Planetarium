@@ -149,7 +149,7 @@ public class InputObject {
             Star.genIstance(star_name, mass, pos);
         }
         GeneralFormatter.decrementIndents();
-        return new GestioneSistema(sys_name);
+        return GestioneSistema.getIstance(sys_name);
     }
 
     private static boolean isDS_Enabled = false;

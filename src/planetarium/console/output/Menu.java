@@ -40,6 +40,7 @@ public class Menu {
     }
 
     private void reset() {
+        GestioneSistema.destroy();
         menu.clear();
         gs = null;
         death_star_pos = -1;

@@ -24,7 +24,7 @@ import planetarium.contents.system.questionable.Queryable;
 public class Planetarium {
 
     public static void testGeneric() {
-        GestioneSistema gs = new GestioneSistema(null);
+        GestioneSistema gs = GestioneSistema.getIstance(null);
         //ciao
         System.out.println("Creato il sistema:\t" + gs.getName());
         System.out.println("Stella del sistema:\t" + gs.getStar());
@@ -49,7 +49,7 @@ public class Planetarium {
     }
 
     public static void testMaximumExpectedLoad() {
-        GestioneSistema gs = new GestioneSistema("Sistema di massimo");
+        GestioneSistema gs = GestioneSistema.getIstance("Sistema di massimo");
         long t1 = new Date().getTime();
         for (int i = 0; i < 26000; i++) {
             Planet tmp = new Planet(null, (i + 1) * 10, new Position(i + 3, i + 3));
@@ -68,7 +68,7 @@ public class Planetarium {
 
     public static void testArnald() {
         Star.genIstance("Stella", 30, new Position(0, 0));
-        GestioneSistema gs = new GestioneSistema("Sistema di prova");
+        GestioneSistema gs = GestioneSistema.getIstance("Sistema di prova");
         Planet pianeta1 = new Planet("Pianeta1", 5, new Position(0, -3));
         Planet pianeta2 = new Planet("Pianeta2", 7, new Position(3, 3));
         Moon luna1 = new Moon("Luna1", 1, new Position(-1, -4));

@@ -26,6 +26,8 @@ import planetarium.contents.system.utils.NamePicker;
  */
 public class GestioneSistema {
 
+    private static GestioneSistema istance;
+
     private final String name;
     private final Star main;
     private static final Grid coordinate_sys = new Grid(0, 0);
@@ -33,10 +35,21 @@ public class GestioneSistema {
     private int planet_counter = 0;
     private int moon_counter = 0;
 
-    public GestioneSistema(String name) {
+    private GestioneSistema(String name) {
         this.name = name == null || "".equals(name.trim()) ? NamePicker.getIstance().getName(CelestialType.SISTEMA) : name;
         main = Star.genIstance("", (Math.random() + 1) * 1000, new Position(0, 0));
         init();
+    }
+
+    public static GestioneSistema getIstance(String name) {
+        if (istance == null) {
+            istance = new GestioneSistema(name);
+        }
+        return istance;
+    }
+
+    public static void destroy() {
+        istance = null;
     }
 
     private void init() {
