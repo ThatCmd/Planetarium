@@ -82,6 +82,6 @@ public class Position {
      * @return Posizione sommata.
      */
     public static Position sum(Position p1, Position p2) {
-        return p1 == null ? (p2 == null ? null : p2) : (p2 == null ? new Position(p1.getX(), p1.getY()) : new Position(p1.getX() + p2.getX(), p1.getY() + p2.getY()));
+        return p1 == null ? (p2 == null ? null : p2) : (p2 == null ? p1 : new Position(p1.getX() + p2.getX(), p1.getY() + p2.getY()));
     }
 }
