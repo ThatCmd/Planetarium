@@ -7,6 +7,7 @@ package planetarium.contents.system.cartesian;
 
 /**
  * Semplice rappresentazione di un punto del piano.
+ * Rappresentazione in coordinate 2D.
  *
  * @author TTT
  */
