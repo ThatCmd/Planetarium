@@ -75,7 +75,7 @@ public final class RegistryEvent {
      */
     public void elementRemoved(RegistrableEntry re, Registry r) {
         if (r != null && r.onCall()) {
-            listeners.forEach(l -> l.onElementRegistered(re));
+            listeners.forEach(l -> l.onElementRemoved(re));
         }
     }
 }
