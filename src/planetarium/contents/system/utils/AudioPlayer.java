@@ -15,7 +15,6 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import planetarium.contents.celestials.customized.MorteNera;
 
 /**
  *
@@ -24,16 +23,22 @@ import planetarium.contents.celestials.customized.MorteNera;
 public class AudioPlayer {
 
     public void playAudioJoined(String p) {
-        try {
-            InputStream s = getClass().getResourceAsStream(p);
-            AudioInputStream stream = AudioSystem.getAudioInputStream(s);
-            Clip clip = (Clip) AudioSystem.getLine(new DataLine.Info(Clip.class, stream.getFormat()));
-            clip.open(stream);
-            clip.start();
-            Thread.sleep(clip.getMicrosecondLength() / 1000);
-        } catch (LineUnavailableException | UnsupportedAudioFileException | IOException | InterruptedException ex) {
-            Logger.getLogger(MorteNera.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    InputStream s = getClass().getResourceAsStream(p);
+                    AudioInputStream stream = AudioSystem.getAudioInputStream(s);
+                    Clip clip = (Clip) AudioSystem.getLine(new DataLine.Info(Clip.class, stream.getFormat()));
+                    clip.open(stream);
+                    clip.start();
+                    Thread.sleep(clip.getMicrosecondLength() / 1000);
+                } catch (LineUnavailableException | UnsupportedAudioFileException | IOException | InterruptedException ex) {
+                    Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }.start();
+
     }
 
 }

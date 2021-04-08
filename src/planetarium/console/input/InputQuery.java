@@ -224,11 +224,14 @@ public class InputQuery {
                 ICelestial c2 = celestialLookup("Seleziona corpo 2:");
                 GeneralFormatter.decrementIndents();
                 boolean b = Calculator.canCollide(c1, c2);
+                printOut("Controllo collisioni tra: " + c1 + " e " + c2, true, false);
+                GeneralFormatter.incrementIndents();
                 if (b) {
                     printOut("Le orbite dei due corpi hanno almeno un punto di collisione.", true, false);
                 } else {
                     printOut("I due corpi non potranno mai collidere.", true, false);
                 }
+                GeneralFormatter.decrementIndents();
             } else {
                 printOut("Non ci sono abbastanza corpi celesti per poter eseguire dei calcoli. Aggiungine altri.", true, true);
             }
